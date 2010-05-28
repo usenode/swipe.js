@@ -1,6 +1,6 @@
 
 if (this.document) {
-    pkg.define('swipe_httpclient', ['womble_uri', 'promise'], function (uri, promise) {
+    pkg.define('swipe_httpclient', ['swipe_uri', 'promise'], function (uri, promise) {
 
         var ns = {};
 
@@ -105,9 +105,9 @@ if (this.document) {
     });
 }
 else {
-    pkg.load('swipe_nodehttpclient', function (nodehttpclient) {
+    pkg.load('swipe_httpclient_node', function (client) {
         pkg.define('swipe_httpclient', function () {
-            return nodehttpclient;
+            return client;
         });
     });
 }

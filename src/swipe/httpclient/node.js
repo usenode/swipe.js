@@ -128,10 +128,6 @@ pkg.define('swipe_httpclient_node', ['node:sys', 'promise', 'node:http', 'node:u
                     instrumentation.finished = new Date();
                 }
 
-                if (client.cache && response.publiclyCacheable()) {
-                    client.cache.set(location, response, response.cacheUntil());
-                }
-
                 finished.resolve(response);
 
                 // TODO should we reject instead of resolving when the response isn't successful?
